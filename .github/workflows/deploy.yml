@@ -58,13 +58,13 @@ jobs:
           # start_date: This is the planned start date
           # end_date: This is the planned end date
           # For deployment gate based change, uncomment the 'deployment-gate' configuration and the 'deploy' step 
-          deployment-gate: '{"environment": "Prod", "jobName": "Deploy"}'
+          #deployment-gate: '{"environment": "Prod", "jobName": "Deploy"}'
 
-  deploy:
-   name: 'Deploy'
-   needs: ServiceNowDevOpsChange
-   runs-on: ubuntu-latest
-   environment: Prod
-   steps:
-     - name: Run deployment scripts
-       run: echo Completed Deployment
+  # deploy:
+  #  name: 'Deploy'
+  #  needs: ServiceNowDevOpsChange
+  #  runs-on: ubuntu-latest
+  #  environment: Prod
+  #  steps:
+  #    - name: Run deployment scripts
+  #      run: echo Completed Deployment
