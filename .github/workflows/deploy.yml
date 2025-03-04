@@ -62,7 +62,7 @@ jobs:
 
   deploy:
    name: 'Deploy'
-   needs: ServiceNowDevOpsChange
+   needs: change_request
    runs-on: ubuntu-latest
    environment: Prod
    steps:
