@@ -64,14 +64,14 @@ jobs:
         run: echo "change-request-number = ${{ steps.create.outputs.change-request-number }}" >> $GITHUB_OUTPUT
         
 
-  # deploy:
-  #  name: 'Deploy'
-  #  needs: change_request
-  #  runs-on: ubuntu-latest
-  #  environment: Prod
-  #  concurrency:
-  #   group: ${{ github.workflow }}-${{ github.ref }}
-  #   cancel-in-progress: true
-  #  steps:
-  #    - name: Run deployment scripts
-  #      run: echo Completed Deployment
+  deploy:
+   name: 'Deploy'
+   needs: change_request
+   runs-on: ubuntu-latest
+   #environment: Prod
+   concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+   steps:
+     - name: Run deployment scripts
+       run: echo Completed Deployment
