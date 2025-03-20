@@ -37,6 +37,7 @@ jobs:
     name: 'ServiceNow DevOps Change'
     steps:
       - name: ServiceNow Change
+        id: create
         # For custom action based change, remove or disable the 'deployment-gate' configuration and the 'deploy' step. Ensure to update to the latest version of the custom action, for e.g. ServiceNow/servicenow-devops-change@v5.1.0
         uses: ServiceNow/servicenow-devops-change@v5.1.0
         with:
@@ -59,6 +60,9 @@ jobs:
           # end_date: This is the planned end date
           # For deployment gate based change, uncomment the 'deployment-gate' configuration and the 'deploy' step 
           deployment-gate: '{"environment": "Prod", "jobName": "deploy"}'
+      - name: Output CHG
+        run: echo "change-request-number = ${{ steps.create.outputs.change-request-number }}" >> $GITHUB_OUTPUT
+        
 
   deploy:
    name: 'Deploy'
