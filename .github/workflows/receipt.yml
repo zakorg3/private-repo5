@@ -62,7 +62,7 @@ jobs:
           # For deployment gate based change, uncomment the 'deployment-gate' configuration and the 'deploy' step 
           #deployment-gate: '{"environment": "Prod", "jobName": "deploy"}'
       - name: Output CHG
-        run: echo "change-request-number = ${{ steps.create.outputs.change-request-number }}" >> $GITHUB_OUTPUT
+        run: echo "change-request-number = ${{ steps.create.outputs.change-request-number }}" >> $GITHUB_STEP_SUMMARY
         
 
   deploy:
