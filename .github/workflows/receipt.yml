@@ -49,9 +49,8 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           # GitHub Context
           context-github: ${{ toJSON(github) }}
-          interval: 15
-          timeout: 90
-          changeCreationTimeOut: 90
+          interval: 10
+          timeout: 60
           abortOnChangeCreationFailure: true
           abortOnChangeStepTimeout: true
           # Display Name of the Job
