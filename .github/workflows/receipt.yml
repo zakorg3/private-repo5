@@ -49,7 +49,11 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           # GitHub Context
           context-github: ${{ toJSON(github) }}
-          interval: 30
+          interval: 15
+          timeout: 90
+          changeCreationTimeOut: 90
+          abortOnChangeCreationFailure: true
+          abortOnChangeStepTimeout: true
           # Display Name of the Job
           job-name: 'ServiceNow DevOps Change'
           # change-request: snDevOpsChange
