@@ -36,6 +36,8 @@ jobs:
     runs-on: ubuntu-latest
     name: 'ServiceNow DevOps Change'
     steps:
+      - name: Echo Job ID
+        run: echo $GITHUB_JOB
       - name: ServiceNow Change
         id: create
         # For custom action based change, remove or disable the 'deployment-gate' configuration and the 'deploy' step. Ensure to update to the latest version of the custom action, for e.g. ServiceNow/servicenow-devops-change@v5.1.0
