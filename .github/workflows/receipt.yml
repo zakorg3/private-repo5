@@ -29,6 +29,12 @@ jobs:
   #         echo Add other actions to build,
   #         echo test, and deploy your project.
 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: echo "This is the build"
+
   change_request:
     # jobs that must complete successfully before this job will run
     #needs: build
