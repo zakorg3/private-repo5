@@ -20,6 +20,8 @@ jobs:
           job-name: 'Release Preparation' # Must be display name of the Job.
           change-request: >
             {
+                "setCloseCode": "false",
+                "autoCloseChange": "false",
                 "attributes": {
                     "requested_by": "3948666ae7012300dd926217c2f6a967",
                     "assignment_group": "287ee6fea9fe198100ada7950d0b1b73",
