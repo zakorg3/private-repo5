@@ -23,6 +23,7 @@ jobs:
                 "setCloseCode": "false",
                 "autoCloseChange": "false",
                 "attributes": {
+                    "chg_model": "007c4001c343101035ae3f52c1d3aeb2",
                     "requested_by": "3948666ae7012300dd926217c2f6a967",
                     "assignment_group": "287ee6fea9fe198100ada7950d0b1b73",
                     "priority": "2",
