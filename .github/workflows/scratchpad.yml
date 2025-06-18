@@ -1,0 +1,12 @@
+name: Scratchpad
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build Job"
+    runs-on: ubuntu-latest
+
+    steps:
+        - run: echo $GITHUB_JOB
