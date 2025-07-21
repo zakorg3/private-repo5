@@ -27,7 +27,7 @@ jobs:
                     "requested_by": "3948666ae7012300dd926217c2f6a967",
                     "assignment_group": "287ee6fea9fe198100ada7950d0b1b73",
                     "peeority": "2",
-                    "comments": "This is a sample pipeline script to be added in your change step",
+                    "comments": "This is a sample pipeline script to be added in your change steps",
                     "work_notes": "Update this to work_notes",
                     "start_date": "2025-03-13 12:00:00",
                     "end_date": "2025-03-13 12:00:00"
