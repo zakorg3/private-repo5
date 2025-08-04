@@ -1,0 +1,46 @@
+name: Change Control Example 2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    name: 'Release Preparation'
+    steps:
+      - name: Create ServiceNow Change
+        uses: ServiceNow/servicenow-devops-change@a970f84ddc469bafe6c830da617f32ed1c246096 #v6.0.0
+        with:
+
+          devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+          instance-url: ${{ vars.SN_INSTANCE_URL }}
+          tool-id: ${{ vars.SN_ORCHESTRATION_TOOL_ID }}
+
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Release Preparation' # Must be display name of the Job.
+          change-request: >
+            {
+                "setCloseCode": "false",
+                "autoCloseChange": "false",
+                "attributes": {
+                    "chg_model": "007c4001c343101035ae3f52c1d3aeb2",
+                    "requested_by": "3948666ae7012300dd926217c2f6a967",
+                    "assignment_group": "287ee6fea9fe198100ada7950d0b1b73",
+                    "priority": "2",
+                    "comments": "This is a sample pipeline script to be added in your change steps",
+                    "work_notes": "Update this to work_notes",
+                    "start_date": "2025-03-13 12:00:00",
+                    "end_date": "2025-03-13 12:00:00"
+                }
+            }
+          deployment-gate: '{"environment": "Production NA1", "jobName": "Deployment"}' # Update job name.
+
+  deploy:
+   name: 'Deployment'
+   needs: prepare
+   runs-on: ubuntu-latest
+   environment: "Production NA1"
+   
+   steps:
+     - name: Deploy to Production
+       run: echo "Release steps would go here following a submitted change request. "
